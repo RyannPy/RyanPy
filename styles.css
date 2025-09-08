@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  background-color: #0d0d0d;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* NAVBAR */
+nav {
+  background-color: #0d0d0d;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav li {
+  height: 50px;
+}
+nav a {
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: white;
+  transition: all 0.3s ease;
+  font-weight: 400;
+}
+nav a:hover {
+  color: #9d4edd;
+  transform: scale(1.1);
+}
+nav li:first-child {
+  margin-right: auto;
+}
+.titlepage {
+    color: white;
+    padding: 13px 20px;
+    font-family: "Ubuntu";
+    font-weight: bold;
+}
+/* SIDEBAR (mobile) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(20, 20, 20, 0.95);
+  box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.5);
+
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  /* animasi */
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+.sidebar.active {
+  transform: translateX(0);
+}
+.sidebar li {
+  width: 100%;
+}
+.sidebar a {
+  width: 100%;
+  padding: 20px 40px;
+}
+/* blur konten ketika sidebar on */
+.container.blur {
+  filter: blur(3px);
+  transition: filter 0.7s ease;
+}
+
+/* Hamburger selalu di pojok kanan */
+.hamburger {
+  display: none;
+  z-index: 1000; 
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar li:not(:first-child) {
+    display: none; /* sembunyiin menu di mobile */
+  }
+
+  .hamburger {
+    display: block; /* tampilkan hamburger */
+  }
+}
+
+
+
+.container {
+  margin: 20px;
+  padding: 20px;
+  width: auto;
+}
+
+/* HOME */
+.profileutama-home {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* GAMBAR */
+.fotoprofil-home {
+  flex: 1.2;
+  display: flex;
+  justify-content: flex-end;
+}
+.fotoprofil-home img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  padding: 5px;
+  transition: 0.3s;
+  /* TRANSISI MASUK */
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInLeft 1s ease-out forwards;
+}
+.fotoprofil-home img:hover {
+  padding: 10px;
+  border-left: 2px solid #9d4edd;
+  border-right: 2px solid #9d4edd;
+}
+/* INTRODUCE TEXT */
+.introduce-home {
+  flex: 1.8;
+  color: white;
+  width: auto;
+  
+  /* TRANSISI MASUK */
+   opacity: 0;
+  transform: translateX(50px);
+  animation: slideInRight 1s ease-out forwards;
+  animation-delay: 0.3s; /* muncul sedikit setelah gambar */
+}
+.introduce-home h2 {
+  padding: 15px;
+}
+.introduce-home p {
+  padding: 15px;
+  line-height: 1.5;
+  text-align: justify;
+  width: 70%;
+  transition: 0.3s;
+}
+/* efek hover border */
+.introduce-home p:hover {
+  padding: 10px;
+  border-top: 2px solid #9d4edd;
+  border-bottom: 2px solid #9d4edd;
+}
+/*KEYFRAME TRANSISI MASUK*/
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* HIGHLIGHT TEXT */
+.highlightname-home {
+  font-weight: bold;
+  color: #9d4edd;
+  transition: 0.3s;
+}
+.highlightname-home:hover {
+  color: #fff;
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(255, 255, 255, 0.4);
+}
+.highlightintroduce-home {
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.highlightintroduce-home:hover {
+  color: #9d4edd;
+}
+
+/* Responsivitas Home */
+@media (max-width: 768px) {
+  .profileutama-home {
+    /* vertikal */
+    flex-direction: column;
+    text-align: center;
+  }
+  .fotoprofil-home {
+    /* gambar ditengah */
+    justify-content: center; 
+  }
+  .fotoprofil-home img {
+    /* ukuran fotone */
+    max-width: 60%;
+  }
+  .introduce-home {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .introduce-home p {
+    width: 100%;
+  }
+}
