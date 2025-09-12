@@ -1,32 +1,56 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+/* Ilangno highlight biru*/
+  -webkit-focus-ring-color: transparent;
+  outline: none;
 }
+
 body {
   min-height: 100vh;
   background-color: #0d0d0d;
   font-family: "Ubuntu", sans-serif;
 }
-/* Ilangno highlight biru*/
-a {
-  -webkit-tap-highlight-color: transparent; /* Safari/Chrome mobile */
-  -webkit-focus-ring-color: transparent;
-  outline: none;
+
+/*KEYFRAME TRANSISI MASUK*/
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* NAVBAR */
 nav {
   background-color: #0d0d0d;
 }
+
 nav ul {
   list-style: none;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
+
 nav li {
   height: 50px;
 }
+
 nav a {
   height: 100%;
   padding: 0 30px;
@@ -37,19 +61,23 @@ nav a {
   transition: all 0.3s ease;
   font-weight: 400;
 }
+
 nav a:hover {
   color: #9d4edd;
   transform: scale(1.1);
 }
+
 nav li:first-child {
   margin-right: auto;
 }
+
 .titlepage {
-    color: white;
-    padding: 13px 20px;
-    font-family: "Ubuntu";
-    font-weight: bold;
+  color: white;
+  padding: 13px 20px;
+  font-family: "Ubuntu";
+  font-weight: bold;
 }
+
 /* SIDEBAR (mobile) */
 .sidebar {
   position: fixed;
@@ -69,16 +97,20 @@ nav li:first-child {
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
 }
+
 .sidebar.active {
   transform: translateX(0);
 }
+
 .sidebar li {
   width: 100%;
 }
+
 .sidebar a {
   width: 100%;
   padding: 20px 40px;
 }
+
 /* blur konten ketika sidebar on */
 .container.blur {
   filter: blur(3px);
@@ -88,17 +120,19 @@ nav li:first-child {
 /* Hamburger selalu di pojok kanan */
 .hamburger {
   display: none;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .navbar li:not(:first-child) {
-    display: none; /* sembunyiin menu di mobile */
+    display: none;
+    /* sembunyiin menu di mobile */
   }
 
   .hamburger {
-    display: block; /* tampilkan hamburger */
+    display: block;
+    /* tampilkan hamburger */
   }
 }
 
@@ -126,6 +160,7 @@ nav li:first-child {
   display: flex;
   justify-content: flex-end;
 }
+
 .fotoprofil-home img {
   max-width: 250px;
   height: auto;
@@ -136,27 +171,33 @@ nav li:first-child {
   opacity: 0;
   transform: translateX(-50px);
   animation: slideInLeft 1s ease-out forwards;
+  
 }
+
 .fotoprofil-home img:hover {
   padding: 10px;
   border-left: 2px solid #9d4edd;
   border-right: 2px solid #9d4edd;
 }
+
 /* INTRODUCE TEXT */
 .introduce-home {
   flex: 1.8;
   color: white;
   width: auto;
-  
+
   /* TRANSISI MASUK */
-   opacity: 0;
+  opacity: 0;
   transform: translateX(50px);
   animation: slideInRight 1s ease-out forwards;
-  animation-delay: 0.3s; /* muncul sedikit setelah gambar */
+  animation-delay: 0.3s;
+  /* muncul sedikit setelah gambar */
 }
+
 .introduce-home h2 {
   padding: 15px;
 }
+
 .introduce-home p {
   padding: 15px;
   line-height: 1.5;
@@ -164,6 +205,7 @@ nav li:first-child {
   width: 70%;
   transition: 0.3s;
 }
+
 /* efek hover border */
 .introduce-home p:hover {
   padding: 10px;
@@ -178,49 +220,42 @@ nav li:first-child {
   gap: 15px;
   padding: 15px;
 }
+
 .sosmed-icons img {
   width: 20px;
   height: 20px;
   transition: 0.3s;
 }
+
 .sosmed-icons img:hover {
   transform: scale(1.3);
   filter: brightness(0) saturate(100%) invert(16%) sepia(100%) saturate(6000%) hue-rotate(280deg);
 }
-/*KEYFRAME TRANSISI MASUK*/
-@keyframes slideInLeft {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes slideInRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
 /* HIGHLIGHT TEXT */
-.highlightname-home {
+.highlightputihbersinar {
   font-weight: bold;
   color: #9d4edd;
   transition: 0.3s;
 }
-.highlightname-home:hover {
+
+.highlightputihbersinar:hover {
   color: #fff;
-  text-shadow: 
+  text-shadow:
     0 0 5px rgba(255, 255, 255, 0.8),
     0 0 10px rgba(255, 255, 255, 0.6),
     0 0 20px rgba(255, 255, 255, 0.4);
 }
+
 .highlightintroduce-home {
   transition: color 0.2s;
   cursor: pointer;
 }
+
 .highlightintroduce-home:hover {
   color: #9d4edd;
 }
+
 
 /* Responsivitas Home */
 @media (max-width: 768px) {
@@ -229,21 +264,109 @@ nav li:first-child {
     flex-direction: column;
     text-align: center;
   }
+
   .fotoprofil-home {
     /* gambar ditengah */
-    justify-content: center; 
+    justify-content: center;
   }
+
   .fotoprofil-home img {
     /* ukuran fotone */
     max-width: 60%;
   }
+
   .introduce-home {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .introduce-home p {
     width: 100%;
   }
+  
+  .pilihanmenuhome-layer1 {
+    flex-direction: column;
+  }
+  .pilihanmenuhome-layer2 {
+    flex-direction: column;
+  }
+}
+
+/* MENU DI HOME */
+.menuhome {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: 80px 0;
+} 
+/* Merapikan dadi 2 baris */
+.pilihanmenuhome-layer1 {
+  display: flex;
+  justify-content: center;
+}
+.pilihanmenuhome-layer2 {
+  display: flex;
+  justify-content: center;
+}
+/* Perpilihan  menu */
+.pilihanmenuhome {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 10px 10px 20px 10px;
+  margin: 30px;
+  width: 230px;
+  border: 1px solid #9d4edd;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  /* TRANSISI MASUK */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideInRight 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+/* Hover per pilihan menu */
+.pilihanmenuhome:hover {
+  box-shadow: 0 0 15px rgba(157, 78, 221, 0.9);
+}
+/* Logo menu */
+.logomenuhome img {
+  width: 100px;
+  height: auto;
+  margin: 5px;
+}
+/* Judul menu */
+.judulmenuhome h3 {
+  margin: 5px;
+  font-size: 25px;
+}
+/* Keterangan menu */
+.keteranganmenuhome p {
+  margin: 10px 0 20px 0;
+}
+/* Tombol read more menu */
+.tombolreadmoremenuhome {
+  border-radius: 5px;
+  padding: 8px;
+  text-decoration: none;
+}
+
+/* TOMBOL HOVER  */
+.tombolhoverungu {
+  border: 1px solid #9d4edd;
+  color: #9d4edd;
+  transition: 0.5s ease;
+}
+.tombolhoverungu:hover {
+  background-color: #9d4edd;
+  color: #fff;
 }
