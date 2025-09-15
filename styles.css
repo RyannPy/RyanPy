@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
-/* Ilangno highlight biru*/
+  /* Ilangno highlight biru*/
   -webkit-focus-ring-color: transparent;
   outline: none;
 }
@@ -11,6 +11,16 @@ body {
   min-height: 100vh;
   background-color: #0d0d0d;
   font-family: "Ubuntu", sans-serif;
+}
+
+/* GARIS */
+.garis {
+  border: none;
+  height: 1px;
+  width: 80%;
+  background: linear-gradient(to right, #9d4edd, #c77dff);
+  border-radius: 10px;
+  margin: 50px auto;
 }
 
 /*KEYFRAME TRANSISI MASUK*/
@@ -33,7 +43,6 @@ body {
     transform: translateY(0);
   }
 }
-
 
 /* NAVBAR */
 nav {
@@ -136,8 +145,6 @@ nav li:first-child {
   }
 }
 
-
-
 .container {
   margin: 20px;
   padding: 20px;
@@ -151,8 +158,8 @@ nav li:first-child {
   gap: 30px;
   align-items: center;
   justify-content: center;
+  margin: 50px 0 80px 0;
 }
-
 
 /* GAMBAR */
 .fotoprofil-home {
@@ -162,7 +169,7 @@ nav li:first-child {
 }
 
 .fotoprofil-home img {
-  max-width: 250px;
+  max-width: 280px;
   height: auto;
   border-radius: 10px;
   padding: 5px;
@@ -171,7 +178,6 @@ nav li:first-child {
   opacity: 0;
   transform: translateX(-50px);
   animation: slideInLeft 1s ease-out forwards;
-  
 }
 
 .fotoprofil-home img:hover {
@@ -196,6 +202,7 @@ nav li:first-child {
 
 .introduce-home h2 {
   padding: 15px;
+  font-size: 40px;
 }
 
 .introduce-home p {
@@ -229,7 +236,8 @@ nav li:first-child {
 
 .sosmed-icons img:hover {
   transform: scale(1.3);
-  filter: brightness(0) saturate(100%) invert(16%) sepia(100%) saturate(6000%) hue-rotate(280deg);
+  filter: brightness(0) saturate(100%) invert(16%) sepia(100%) saturate(6000%)
+    hue-rotate(280deg);
 }
 
 /* HIGHLIGHT TEXT */
@@ -241,10 +249,8 @@ nav li:first-child {
 
 .highlightputihbersinar:hover {
   color: #fff;
-  text-shadow:
-    0 0 5px rgba(255, 255, 255, 0.8),
-    0 0 10px rgba(255, 255, 255, 0.6),
-    0 0 20px rgba(255, 255, 255, 0.4);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .highlightintroduce-home {
@@ -255,7 +261,6 @@ nav li:first-child {
 .highlightintroduce-home:hover {
   color: #9d4edd;
 }
-
 
 /* Responsivitas Home */
 @media (max-width: 768px) {
@@ -285,7 +290,7 @@ nav li:first-child {
   .introduce-home p {
     width: 100%;
   }
-  
+
   .pilihanmenuhome-layer1 {
     flex-direction: column;
   }
@@ -304,7 +309,7 @@ nav li:first-child {
   align-items: center;
   justify-content: center;
   margin: 80px 0;
-} 
+}
 /* Merapikan dadi 2 baris */
 .pilihanmenuhome-layer1 {
   display: flex;
@@ -369,4 +374,73 @@ nav li:first-child {
 .tombolhoverungu:hover {
   background-color: #9d4edd;
   color: #fff;
+}
+.tombolhoverputihbackground {
+  border: 1px solid white;
+  color: white;
+  transition: 0.5s ease;
+}
+.tombolhoverputihbackground:hover {
+  background-color: #fff;
+  color: #9d4edd;
+}
+
+/* PROJECT HOME MENU */
+.bestproject-home {
+}
+.judulmenu-home {
+  color: white;
+  font-size: 40px;
+  margin: 0 0 20px 0;
+}
+.pilihanbestproject-home {
+  background-color: #9d4edd;
+  margin: 15px;
+  padding: 10px 0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  transition: 0.3s ease;
+  /* TRANSISI MASUK */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideInRight 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+.pilihanbestproject-home:hover {
+  background-color: black;
+  border: 1px solid white;
+  box-shadow: 0 0px 15px rgba(255, 255, 255, 0.8);
+}
+.gambarproject {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+.gambarproject img {
+  width: 240px;
+  height: 135px;
+  border-radius: 8px;
+}
+.judulproject {
+  margin: 5px;
+  color: white;
+}
+.keteranganproject {
+  margin: 5px 10px;
+  color: white;
+  text-align: center;
+}
+.tomboltryhome {
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+.tomboltryprojecthome {
+  border-radius: 5px;
+  padding: 8px;
+  margin: 5px;
+  text-decoration: none;
 }
