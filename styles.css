@@ -24,26 +24,69 @@ body {
 }
 
 /*KEYFRAME TRANSISI MASUK*/
-@keyframes slideInLeft {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* Kondisi awal semua elemen */
+.slide-left,
+.slide-right,
+.slide-top,
+.slide-bottom {
+  opacity: 0;
+  transform: translateX(0);
 }
 
+.slide-left { transform: translateX(-50px); }
+.slide-right { transform: translateX(50px); }
+.slide-top { transform: translateY(-50px); }
+.slide-bottom { transform: translateY(50px);}
+
+/* Aktif animasi */
+.slide-left.animate   { animation: slideInLeft 1s ease-out forwards; }
+.slide-right.animate  { animation: slideInRight 1s ease-out forwards; }
+.slide-top.animate    { animation: slideInTop 1s ease-out forwards; }
+.slide-bottom.animate { animation: slideInBottom 1s ease-out forwards; }
+
+/* Keyframes */
+@keyframes slideInLeft {
+  to { opacity: 1; transform: translateX(0); }
+}
 @keyframes slideInRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  to { opacity: 1; transform: translateX(0); }
 }
 @keyframes slideInTop {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInBottom {
+  to { opacity: 1; transform: translateY(0);}
 }
 
+/* Aktif animasi progress */
+.progress.animate.fill-90 { animation: fill90 2s forwards; }
+.progress.animate.fill-80 { animation: fill80 2s forwards; }
+.progress.animate.fill-70 { animation: fill70 2s forwards; }
+.progress.animate.fill-60 { animation: fill70 2s forwards; }
+.progress.animate.fill-50 { animation: fill70 2s forwards; }
+.progress.animate.fill-40 { animation: fill70 2s forwards; }
+
+/* Aktif animasi progress khusus */
+.progress.animate.fill-89 { animation: fill89 2s forwards; }
+.progress.animate.fill-86 { animation: fill86 2s forwards; }
+.progress.animate.fill-15 { animation: fill15 2s forwards; }
+.progress.animate.fill-95 { animation: fill95 2s forwards; }
+.progress.animate.fill-55 { animation: fill55 2s forwards; }
+
+/* Keyframes progress */
+@keyframes fill90 { from { width: 0; } to { width: 90%; } }
+@keyframes fill80 { from { width: 0; } to { width: 80%; } }
+@keyframes fill70 { from { width: 0; } to { width: 70%; } }
+@keyframes fill60 { from { width: 0; } to { width: 60%; } }
+@keyframes fill50 { from { width: 0; } to { width: 50%; } }
+@keyframes fill40 { from { width: 0; } to { width: 40%; } }
+
+/* Keyframes khusus */
+@keyframes fill89 { from { width: 0; } to { width: 89%; } }
+@keyframes fill86 { from { width: 0; } to { width: 86%; } }
+@keyframes fill15 { from { width: 0; } to { width: 15%; } }
+@keyframes fill95 { from { width: 0; } to { width: 95%; } }
+@keyframes fill55 { from { width: 0; } to { width: 55%; } }
 /* NAVBAR */
 nav {
   background-color: #0d0d0d;
@@ -174,10 +217,6 @@ nav li:first-child {
   border-radius: 10px;
   padding: 5px;
   transition: 0.3s;
-  /* TRANSISI MASUK */
-  opacity: 0;
-  transform: translateX(-50px);
-  animation: slideInLeft 1s ease-out forwards;
 }
 
 .fotoprofil-home img:hover {
@@ -191,13 +230,6 @@ nav li:first-child {
   flex: 1.8;
   color: white;
   width: auto;
-
-  /* TRANSISI MASUK */
-  opacity: 0;
-  transform: translateX(50px);
-  animation: slideInRight 1s ease-out forwards;
-  animation-delay: 0.3s;
-  /* muncul sedikit setelah gambar */
 }
 
 .introduce-home h2 {
@@ -236,8 +268,7 @@ nav li:first-child {
 
 .sosmed-icons img:hover {
   transform: scale(1.3);
-  filter: brightness(0) saturate(100%) invert(16%) sepia(100%) saturate(6000%)
-    hue-rotate(280deg);
+  filter: brightness(0) saturate(100%) invert(16%) sepia(100%) saturate(6000%) hue-rotate(280deg);
 }
 
 /* HIGHLIGHT TEXT */
@@ -294,6 +325,7 @@ nav li:first-child {
   .pilihanmenuhome-layer1 {
     flex-direction: column;
   }
+
   .pilihanmenuhome-layer2 {
     flex-direction: column;
   }
@@ -310,15 +342,18 @@ nav li:first-child {
   justify-content: center;
   margin: 80px 0;
 }
+
 /* Merapikan dadi 2 baris */
 .pilihanmenuhome-layer1 {
   display: flex;
   justify-content: center;
 }
+
 .pilihanmenuhome-layer2 {
   display: flex;
   justify-content: center;
 }
+
 /* Perpilihan  menu */
 .pilihanmenuhome {
   display: flex;
@@ -333,31 +368,31 @@ nav li:first-child {
   border: 1px solid #9d4edd;
   border-radius: 8px;
   transition: 0.3s ease;
-  /* TRANSISI MASUK */
-  opacity: 0;
-  transform: translateY(50px);
-  animation: slideInRight 1s ease-out forwards;
-  animation-delay: 0.3s;
 }
+
 /* Hover per pilihan menu */
 .pilihanmenuhome:hover {
   box-shadow: 0 0 15px rgba(157, 78, 221, 0.9);
 }
+
 /* Logo menu */
 .logomenuhome img {
   width: 100px;
   height: auto;
   margin: 5px;
 }
+
 /* Judul menu */
 .judulmenuhome h3 {
   margin: 5px;
   font-size: 25px;
 }
+
 /* Keterangan menu */
 .keteranganmenuhome p {
   margin: 10px 0 20px 0;
 }
+
 /* Tombol read more menu */
 .tombolreadmoremenuhome {
   border-radius: 5px;
@@ -371,28 +406,30 @@ nav li:first-child {
   color: #9d4edd;
   transition: 0.5s ease;
 }
+
 .tombolhoverungu:hover {
   background-color: #9d4edd;
   color: #fff;
 }
+
 .tombolhoverputihbackground {
   border: 1px solid white;
   color: white;
   transition: 0.5s ease;
 }
+
 .tombolhoverputihbackground:hover {
   background-color: #fff;
   color: #9d4edd;
 }
 
 /* PROJECT HOME MENU */
-.bestproject-home {
-}
 .judulmenu-home {
   color: white;
   font-size: 40px;
   margin: 0 0 20px 0;
 }
+
 .pilihanbestproject-home {
   background-color: #9d4edd;
   margin: 15px;
@@ -403,44 +440,146 @@ nav li:first-child {
   align-items: center;
   width: 280px;
   transition: 0.3s ease;
-  /* TRANSISI MASUK */
-  opacity: 0;
-  transform: translateY(50px);
-  animation: slideInRight 1s ease-out forwards;
-  animation-delay: 0.3s;
 }
+
 .pilihanbestproject-home:hover {
   background-color: black;
   border: 1px solid white;
   box-shadow: 0 0px 15px rgba(255, 255, 255, 0.8);
 }
+
 .gambarproject {
   display: flex;
   justify-content: center;
   padding: 5px;
 }
+
 .gambarproject img {
   width: 240px;
   height: 135px;
   border-radius: 8px;
 }
+
 .judulproject {
   margin: 5px;
   color: white;
 }
+
 .keteranganproject {
   margin: 5px 10px;
   color: white;
   text-align: center;
 }
+
 .tomboltryhome {
   width: auto;
   display: flex;
   justify-content: center;
 }
+
 .tomboltryprojecthome {
   border-radius: 5px;
   padding: 8px;
   margin: 5px;
   text-decoration: none;
 }
+
+
+/* SKILLL HOME */
+
+.kotakskill-home {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px;
+}
+.juduljenisskill-home {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+.jenisskilll-home {
+  margin-bottom: 20px;
+}
+.skill-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: white;
+  margin-top: 5px;
+}
+.progress-bar {
+  width: 100%;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 15px;
+}
+.progress {
+  height: 100%;
+  width: 0;
+  /* awalnya 0 */
+  background: linear-gradient(90deg, #c77dff, #9d4edd);
+  font-size: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  padding-right: 10px;
+  color: white;
+  line-height: 18px;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+
+.footer {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 40px 20px 20px;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+.footer h2, .footer h3 {
+  color: #9d4edd;
+}
+.footer p {
+  font-size: 13px;
+  margin: 10px 0;
+}
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+}
+.footer-links ul li a:hover {
+  color: #9d4edd;
+}
+.footer-social a {
+  margin: 0 10px;
+  color: #9d4edd;
+  text-decoration: none;
+  font-weight: bold;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #aaa;
+}
+    
