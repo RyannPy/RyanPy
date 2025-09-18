@@ -9,7 +9,7 @@
 
 body {
   min-height: 100vh;
-  background-color: #0d0d0d;
+  background-color: #0f0f10;
   font-family: "Ubuntu", sans-serif;
 }
 
@@ -62,9 +62,10 @@ body {
 .progress.animate.fill-90 { animation: fill90 2s forwards; }
 .progress.animate.fill-80 { animation: fill80 2s forwards; }
 .progress.animate.fill-70 { animation: fill70 2s forwards; }
-.progress.animate.fill-60 { animation: fill70 2s forwards; }
-.progress.animate.fill-50 { animation: fill70 2s forwards; }
-.progress.animate.fill-40 { animation: fill70 2s forwards; }
+.progress.animate.fill-60 { animation: fill60 2s forwards; }
+.progress.animate.fill-50 { animation: fill50 2s forwards; }
+.progress.animate.fill-40 { animation: fill40 2s forwards; }
+.progress.animate.fill-30 { animation: fill30 2s forwards; }
 
 /* Aktif animasi progress khusus */
 .progress.animate.fill-89 { animation: fill89 2s forwards; }
@@ -72,6 +73,8 @@ body {
 .progress.animate.fill-15 { animation: fill15 2s forwards; }
 .progress.animate.fill-95 { animation: fill95 2s forwards; }
 .progress.animate.fill-55 { animation: fill55 2s forwards; }
+.progress.animate.fill-75 { animation: fill85 2s forwards; }
+.progress.animate.fill-85 { animation: fill75 2s forwards; }
 
 /* Keyframes progress */
 @keyframes fill90 { from { width: 0; } to { width: 90%; } }
@@ -80,13 +83,15 @@ body {
 @keyframes fill60 { from { width: 0; } to { width: 60%; } }
 @keyframes fill50 { from { width: 0; } to { width: 50%; } }
 @keyframes fill40 { from { width: 0; } to { width: 40%; } }
-
+@keyframes fill30 { from { width: 0; } to { width: 30%; } }
 /* Keyframes khusus */
 @keyframes fill89 { from { width: 0; } to { width: 89%; } }
 @keyframes fill86 { from { width: 0; } to { width: 86%; } }
 @keyframes fill15 { from { width: 0; } to { width: 15%; } }
 @keyframes fill95 { from { width: 0; } to { width: 95%; } }
 @keyframes fill55 { from { width: 0; } to { width: 55%; } }
+@keyframes fill75 { from { width: 0; } to { width: 75%; } }
+@keyframes fill85 { from { width: 0; } to { width: 85%; } }
 /* NAVBAR */
 nav {
   background-color: #0d0d0d;
@@ -361,11 +366,12 @@ nav li:first-child {
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  background-color: #1a1a1d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   color: white;
   padding: 10px 10px 20px 10px;
   margin: 30px;
   width: 230px;
-  border: 1px solid #9d4edd;
   border-radius: 8px;
   transition: 0.3s ease;
 }
@@ -410,6 +416,7 @@ nav li:first-child {
 .tombolhoverungu:hover {
   background-color: #9d4edd;
   color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
 .tombolhoverputihbackground {
@@ -421,6 +428,7 @@ nav li:first-child {
 .tombolhoverputihbackground:hover {
   background-color: #fff;
   color: #9d4edd;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
 /* PROJECT HOME MENU */
@@ -431,8 +439,9 @@ nav li:first-child {
 }
 
 .pilihanbestproject-home {
-  background-color: #9d4edd;
-  margin: 15px;
+  background-color: #1a1a1d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  margin: 10px;
   padding: 10px 0;
   border-radius: 8px;
   display: flex;
@@ -443,9 +452,7 @@ nav li:first-child {
 }
 
 .pilihanbestproject-home:hover {
-  background-color: black;
-  border: 1px solid white;
-  box-shadow: 0 0px 15px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(157, 78, 221, 0.9);
 }
 
 .gambarproject {
@@ -488,10 +495,11 @@ nav li:first-child {
 /* SKILLL HOME */
 
 .kotakskill-home {
+  background-color: #1a1a1d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   width: 320px;
   display: flex;
   flex-direction: column;
-  border: 1px solid white;
   border-radius: 8px;
   padding: 15px;
   margin: 20px;
