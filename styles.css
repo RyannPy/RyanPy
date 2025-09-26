@@ -17,7 +17,7 @@ body {
 .garis {
   border: none;
   height: 1px;
-  width: 80%;
+  width: 93%;
   background: linear-gradient(to right, #9d4edd, #c77dff);
   border-radius: 10px;
   margin: 50px auto;
@@ -590,4 +590,57 @@ nav li:first-child {
   font-size: 14px;
   color: #aaa;
 }
-  
+
+/* ALL MENU */
+.judulpage {
+  margin: 15px;
+}
+.keteranganpage {
+  margin: 15px;
+  color: #fff;
+}
+
+/* FEATURE / ARTICLE */
+
+
+.featuremenu {
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  display: flex;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  margin: 0 0 20px 0;
+}
+.featuremenu img {
+  width: 20%;
+  height: 120px;
+  border-radius: 8px;
+}
+.teksfeaturemenu {
+  margin: 10px;
+  padding: 10px;
+  color: #fff;
+  width: 100%;
+  border-right: 3px solid #9d4edd;
+}
+.teksfeaturemenu h3{
+  padding: 0 0 5px 0;
+}
+.tanggalfeaturemenu {
+  text-align: right;
+  font-size: 13px;
+  margin-top: 10px;
+}
+.featuremenu:hover {
+  box-shadow: 0 0 15px rgba(157, 78, 221, 0.9);
+}
+
+/* Responsivitas Feature */
+
+@media (max-width: 768px) {
+  .featuremenu img {
+    min-width: 40%;
+    height: auto;
+  }
+}
